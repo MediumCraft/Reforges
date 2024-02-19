@@ -40,6 +40,8 @@ allprojects {
         compileOnly("com.willfp:eco:6.56.0")
         compileOnly("org.jetbrains:annotations:23.0.0")
         compileOnly("org.jetbrains.kotlin:kotlin-stdlib:1.9.20")
+
+        implementation("com.willfp:libreforge:${libreforgeVersion}")
     }
 
     java {
@@ -50,6 +52,7 @@ allprojects {
     tasks {
         shadowJar {
             relocate("com.willfp.libreforge.loader", "com.willfp.reforges.libreforge.loader")
+            relocate("com.willfp.libreforge", "com.willfp.reforges.libreforge")
             relocate("com.willfp.ecomponent", "com.willfp.reforges.ecomponent")
         }
 
